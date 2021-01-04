@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script>
+	// JavaScript code goes here
+    var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+var x = canvas.width/5; //geben den Startpunkt des Balls an 
+var y = canvas.height-70; // geben den Startpunkt des Balls an 
+var dx = -5;
+var dy = -10; // welche Richtung sich der Ball bewegt, kann hier auch -10 machen
+
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI*2); // 100 größe des Balls Durchmesser? 1 das ganze Ball (sonst nur z.B. halber Ball)
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // das Ball keine Spur hinterässt 
+    drawBall();
+    x += dx;
+    y += dy;
+}
+
+setInterval(draw, 1000); // alle 100 Millisekunden
+</script>
+
+</body>
+</html>

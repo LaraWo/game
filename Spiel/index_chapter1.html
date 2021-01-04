@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script>
+	// JavaScript code goes here
+    var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+/*
+--------------------------------- Viereck ----------------------------------------------
+*/
+ctx.beginPath();
+ctx.rect(50, 50, 200, 100);
+//erste Zahl wie weit Abstand von linkem Rand
+// zweite Zahl wie weit Abstand von oberem Rand
+// dritte Zahl wie lange Viereck ist 
+// dritte Zahl wie hoch Viereck ist 
+ctx.fillStyle = "purple";
+// was bedeutet die Zahl die in Orginal Code steht?
+ctx.fill();
+ctx.closePath();
+
+/*
+--------------------------------- Kreis ----------------------------------------------
+*/
+ctx.beginPath();
+ctx.arc(350, 200, 100 , 0, Math.PI*2, false);
+// erste Zahl Abstand zu linkem Rand 
+// zweite Zahl Abstand zu unterem Rand
+// dritte Zahl wie groß der Kreis ist -> Durchmesser?
+// vierte Zahl ob ganer Kreis oder nur ausschnitte angegeben 
+ctx.fillStyle = "pink";
+ctx.fill();
+ctx.closePath();
+
+/*
+--------------------------------- Viereck ohne Füllung  ----------------------------------------------
+*/
+ctx.beginPath();
+ctx.rect(60, 200, 150, 100);
+// gleich wie Viereck 1
+ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+//???? wie ändere ich hier die Farbe???????
+ctx.stroke();
+ctx.closePath();
+</script>
+
+</body>
+</html>
